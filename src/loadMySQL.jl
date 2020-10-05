@@ -5,7 +5,9 @@ using YAML
 
 
 function getOpeningHours(gymName::String, TimeEval::TimeEvalType)
-    openingHoursYaml = YAML.load_file("/Users/jojo/.julia/dev/ClimbDataEval.jl/src/tmp/opening_hours.yml")
+    loadPath = pathof(ClimbDataEval)
+    loadPath = loadPath[1:end-16]*"opening_hours.yml"
+    openingHoursYaml = YAML.load_file(loadPath)
     
     # Loop over all days 
     openingHours = Array{Time,2}(undef, TimeEval.numberOfDaysToEval, 2)

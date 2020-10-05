@@ -24,7 +24,7 @@ data = loadDataFromDatabase("BW_West",a)
 
 plot(dataEval.dataArray[1].percent)
 
-plot([Time(1,5),Time(2,30),Time(4,1)],[1,0,3])
+plot([Time(1,5),Time(2,30),Time(4,1)],[1,0,3], linecolor = :purple)
 
 
-plotData("BW_West", Date(2020,9,1), Date(2020,9,11), [Dates.Sunday, Dates.Thursday, Dates.Friday])
+plotData("KBGilching", Date(2020,8,1), Date(2020,9,11), [Dates.Sunday, Dates.Saturday])

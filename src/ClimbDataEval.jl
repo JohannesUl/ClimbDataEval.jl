@@ -2,8 +2,6 @@ module ClimbDataEval
 using Dates
 using DataFrames
 
-include("loadMySQL.jl")
-
 abstract type AbstractTimeEvalType end
 
 abstract type AbstractDataEvalType end
@@ -41,20 +39,17 @@ function getTimeEval(firstDay::Date, lastDay::Date, dayOpts::Array{Int,1})
 end
 
 function getDataEval(gymName::String, firstDay::Date, lastDay::Date, dayOpts::Array{Int,1})
-    println("1")
     TimeEval = getTimeEval(firstDay, lastDay, dayOpts)
-    println("2")
     openingHours = getOpeningHours(gymName, TimeEval)
-    println("3")
     rawDataArray = loadDataFromDatabase(gymName, TimeEval)
-    println("4")
     dataArray = [ cutDataFrameToOpeningHours(rawDataArray[k], openingHours[k,1], openingHours[k,2]) for k=1:length(rawDataArray) ]
-    println("5")
-    println(size(dataArray))
 
     # Build DataEval
     DataEval = DataEvalType(rawDataArray, dataArray, length(rawDataArray), TimeEval, openingHours, gymName)
     return DataEval
 end
+
+include("loadMySQL.jl")
+include("plotting.jl")
 
 end

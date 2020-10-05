@@ -21,8 +21,11 @@ mutable struct  DataEvalType <:AbstractDataEvalType
     nEntrys::Integer
     TimeEval::TimeEvalType
     openingHours::Array{Time,2}
+    plotTicks::StepRange{Time,Hour}
     gymName::String
 end
+
+include("loadMySQL.jl")
 
 function getTimeEval(firstDay::Date, lastDay::Date, dayOpts::Array{Int,1})
     dayRange = firstDay:Day(1):lastDay
@@ -41,15 +44,16 @@ end
 function getDataEval(gymName::String, firstDay::Date, lastDay::Date, dayOpts::Array{Int,1})
     TimeEval = getTimeEval(firstDay, lastDay, dayOpts)
     openingHours = getOpeningHours(gymName, TimeEval)
+    plotTicks = getPlotTicks(openingHours)
     rawDataArray = loadDataFromDatabase(gymName, TimeEval)
     dataArray = [ cutDataFrameToOpeningHours(rawDataArray[k], openingHours[k,1], openingHours[k,2]) for k=1:length(rawDataArray) ]
 
     # Build DataEval
-    DataEval = DataEvalType(rawDataArray, dataArray, length(rawDataArray), TimeEval, openingHours, gymName)
+    DataEval = DataEvalType(rawDataArray, dataArray, length(rawDataArray), TimeEval, openingHours, plotTicks, gymName)
     return DataEval
 end
 
-include("loadMySQL.jl")
+
 include("plotting.jl")
 
 end

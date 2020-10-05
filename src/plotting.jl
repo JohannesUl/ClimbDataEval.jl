@@ -44,6 +44,7 @@ function plotBWData(dataEval::DataEvalType)
         end
     end
     title!(p, dataEval.gymName)
+    xticks!(p, dataEval.plotTicks)
     display(p)
 end
 

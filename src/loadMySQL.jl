@@ -18,6 +18,25 @@ function getOpeningHours(gymName::String, TimeEval::TimeEvalType)
     return openingHours
 end
 
+function getPlotTicks(openingHours::Array{Time,2})
+    minTime = openingHours[1,1]
+    maxTime = openingHours[1,2]
+    scaling = Hour(1)
+
+    if size(openingHours,1)>1
+        for i = 2:size(openingHours,1)
+            if openingHours[i,1] < minTime
+                minTime = openingHours[i,1]
+            end
+            if openingHours[i,2] > maxTime
+                maxTime = openingHours[i,2]
+            end
+        end
+    end
+
+    return minTime:scaling:maxTime 
+end
+
 function cutDataFrameToOpeningHours(data::DataFrame, openTime::Time, closeTime::Time)
     new_data = data[(data.time.>openTime) .& (data.time.<closeTime), :]
     return new_data

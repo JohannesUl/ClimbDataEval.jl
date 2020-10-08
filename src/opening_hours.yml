@@ -2,16 +2,16 @@
 Einstein:
     open:
       Monday:   06:00:00
-      Thuesday: 06:00:00
-      Wednsday: 06:00:00
+      Tuesday: 06:00:00
+      Wednesday: 06:00:00
       Thursday: 06:00:00
       Friday:   06:00:00
       Saturday: 09:00:00
       Sunday:   09:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 23:00:00
@@ -19,16 +19,16 @@ Einstein:
 BW_West:
     open:
       Monday:   07:00:00
-      Thuesday: 07:00:00
-      Wednsday: 07:00:00
+      Tuesday: 07:00:00
+      Wednesday: 07:00:00
       Thursday: 07:00:00
       Friday:   07:00:00
       Saturday: 08:00:00
       Sunday:   08:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 23:00:00
@@ -36,16 +36,16 @@ BW_West:
 BW_Ost:
     open:
       Monday:   07:00:00
-      Thuesday: 07:00:00
-      Wednsday: 07:00:00
+      Tuesday: 07:00:00
+      Wednesday: 07:00:00
       Thursday: 07:00:00
       Friday:   07:00:00
       Saturday: 07:00:00
       Sunday:   07:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 23:00:00
@@ -53,16 +53,16 @@ BW_Ost:
 KBGilching:
     open:
       Monday:   14:00:00
-      Thuesday: 07:00:00
-      Wednsday: 09:00:00
+      Tuesday: 07:00:00
+      Wednesday: 09:00:00
       Thursday: 14:00:00
       Friday:   09:00:00
       Saturday: 09:00:00
       Sunday:   09:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 21:00:00
@@ -70,16 +70,16 @@ KBGilching:
 KBFreimann:
     open:
       Monday:   09:00:00
-      Thuesday: 07:00:00
-      Wednsday: 07:00:00
+      Tuesday: 07:00:00
+      Wednesday: 07:00:00
       Thursday: 07:00:00
       Friday:   09:00:00
       Saturday: 09:00:00
       Sunday:   09:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 23:00:00
@@ -87,16 +87,16 @@ KBFreimann:
 KBThalkirchen:
     open:
       Monday:   07:00:00
-      Thuesday: 07:00:00
-      Wednsday: 07:00:00
+      Tuesday: 07:00:00
+      Wednesday: 07:00:00
       Thursday: 07:00:00
       Friday:   07:00:00
       Saturday: 08:00:00
       Sunday:   08:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 23:00:00
@@ -104,16 +104,16 @@ KBThalkirchen:
 KBToelz:
     open:
       Monday:   14:30:00
-      Thuesday: 09:00:00
-      Wednsday: 14:30:00
+      Tuesday: 09:00:00
+      Wednesday: 14:30:00
       Thursday: 09:00:00
       Friday:   14:30:00
       Saturday: 09:00:00
       Sunday:   09:00:00
     close:
       Monday:   23:00:00
-      Thuesday: 23:00:00
-      Wednsday: 23:00:00
+      Tuesday: 23:00:00
+      Wednesday: 23:00:00
       Thursday: 23:00:00
       Friday:   23:00:00
       Saturday: 21:00:00

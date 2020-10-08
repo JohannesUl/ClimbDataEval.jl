@@ -28,14 +28,18 @@ end
 include("loadMySQL.jl")
 
 function getTimeEval(firstDay::Date, lastDay::Date, dayOpts::Array{Int,1})
-    dayRange = firstDay:Day(1):lastDay
-    evalDayArray = Array{Date,1}[]
+    if (length(dayOpts) == 1) & (dayOpts[1] === 0)
+        evalDayArray = firstDay:Day(1):lastDay
+    else
+        dayRange = firstDay:Day(1):lastDay
+        evalDayArray = Array{Date,1}[]
 
-    for day in dayRange
-        if Dates.dayofweek(day) in dayOpts
-            #println(Dates.dayofweek(day))
-            evalDayArray = [evalDayArray; day]   
-        end 
+        for day in dayRange
+            if Dates.dayofweek(day) in dayOpts
+                #println(Dates.dayofweek(day))
+                evalDayArray = [evalDayArray; day]   
+            end 
+        end
     end
     TimeEval = TimeEvalType(firstDay, lastDay, dayOpts, length(evalDayArray), evalDayArray)
     return TimeEval

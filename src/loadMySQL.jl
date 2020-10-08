@@ -58,7 +58,7 @@ function loadDataFromDatabase(gymName::String, TimeEval::TimeEvalType)
     # Loop over all days to load and store data in array
     dataArray = Array{DataFrame,1}[]
     for date in TimeEval.evalDayArray
-        stmt = DBInterface.prepare(conn, "SELECT * FROM BoulderData.$gymName WHERE year = (?) AND month = (?) AND day = (?) ")
+        stmt = DBInterface.prepare(conn, "SELECT * FROM BoulderData.$gymName WHERE year = (?) AND month = (?) AND day = (?) ORDER BY hour ASC, minute ASC ")
         cursor = DBInterface.execute(stmt, [Dates.year(date), Dates.month(date), Dates.day(date)])
         dataArray = [dataArray; addTimeColumn(DataFrame(cursor))]  
     end

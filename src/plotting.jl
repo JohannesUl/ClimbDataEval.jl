@@ -175,7 +175,8 @@ function plotKBData(dataEval::DataEvalType)
             label = Dates.dayname(dataEval.TimeEval.evalDayArray[1]),
             xticks = dataEval.plotTicks,
             xrotation=60,
-            bottom_margin = 25px)
+            bottom_margin = 25px,
+            legend = :bottomleft)
     
     leg = [Dates.dayofweek(dataEval.TimeEval.evalDayArray[1])]
     

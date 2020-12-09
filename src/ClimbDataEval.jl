@@ -7,7 +7,7 @@ abstract type AbstractTimeEvalType end
 abstract type AbstractDataEvalType end
 # Write your package code here.
 
-mutable struct  TimeEvalType <:AbstractTimeEvalType
+mutable struct TimeEvalType <:AbstractTimeEvalType
     firstDay::Date
     lastDay::Date
     dayOpts::Array{Int,1}
@@ -15,7 +15,7 @@ mutable struct  TimeEvalType <:AbstractTimeEvalType
     evalDayArray::Array{Date,1}
 end
 
-mutable struct  DataEvalType <:AbstractDataEvalType
+mutable struct DataEvalType <:AbstractDataEvalType
     rawDataArray::Array{DataFrame,1}
     dataArray::Array{DataFrame,1}
     nEntrys::Integer
@@ -56,7 +56,6 @@ function getDataEval(gymName::String, firstDay::Date, lastDay::Date, dayOpts::Ar
     DataEval = DataEvalType(rawDataArray, dataArray, length(rawDataArray), TimeEval, openingHours, plotTicks, gymName)
     return DataEval
 end
-
 
 include("plotting.jl")
 
